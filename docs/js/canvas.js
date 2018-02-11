@@ -14,10 +14,10 @@ function draw() {
     ctx.drawImage(bg_img, 0, 0);
   }
 
-  // var frame_img = new Image();
-  // frame_img.src = "img/waku.png";
-  // /* 画像を描画 */
-  // frame_img.onload = function(){
-  //   ctx.drawImage(frame_img, 0, 0);
-  // }
+  var frame_img = new Image();
+  frame_img.src = "img/waku.png";
+  /* 画像を描画 */
+  frame_img.onload = function(){
+    ctx.drawImage(frame_img, 0, 0);
+  }
 }
