@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html>
   <head>
-    <title>Canvas</title>
+    <title>かるたの生成テスト</title>
+    <link rel="stylesheet" type="text/css" href="css/canvas.css">
   </head>
   <body>
     <!-- <script type="text/javascript"></script> -->
     <script type="text/javascript" src="js/canvas.js"></script>
-    <h1>Canvas</h1>
-    <canvas id="canvas_1" width="723" height="1023"></canvas>
+    <h1>かるたの生成テスト</h1>
+    <form method="post">
+      <p>
+        み
+        <input class="img_selector" type="radio" name="mi" value="00" checked="checked">A
+        <input class="img_selector" type="radio" name="mi" value="01">B
+      </p>
+      <p>
+        む
+        <input class="img_selector" type="radio" name="mu" value="00" checked="checked">A
+        <input class="img_selector" type="radio" name="mu" value="01">B
+      </p>
+    </form>
+    <canvas id="efuda_canvas_0" class="pasteboard" width="1446" height="1023"></canvas>
   </body>
 </html>
