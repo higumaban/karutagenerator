@@ -62,6 +62,8 @@ function setChangeEventListener(){
 
 function drawInit(){
   draw("efuda", "a", "00");
+  draw("efuda", "ki", "00");
+  draw("efuda", "ku", "00");
   draw("efuda", "su", "00");
   draw("efuda", "ha", "00");
   draw("efuda", "hi", "00");
