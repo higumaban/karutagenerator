@@ -1,6 +1,42 @@
-var name2pos = {
-  "mi": {"coord": [0, 0], "layer": 0},
-  "mu": {"coord": [723, 0], "layer": 0},
+const width = 723
+const height = 1023
+
+const name2pos = {
+  "a": {"coord": [width*0, height*0], "layer": 0},
+  "i": {"coord": [width*1, height*0], "layer": 0},
+  "u": {"coord": [width*2, height*0], "layer": 0},
+  "e": {"coord": [width*3, height*0], "layer": 0},
+  "o": {"coord": [width*4, height*0], "layer": 0},
+  "ka": {"coord": [width*5, height*0], "layer": 0},
+  "ki": {"coord": [width*6, height*0], "layer": 0},
+  "ku": {"coord": [width*7, height*0], "layer": 0},
+
+  "ke": {"coord": [width*0, height*1], "layer": 0},
+  "ko": {"coord": [width*1, height*1], "layer": 0},
+  "sa": {"coord": [width*2, height*1], "layer": 0},
+  "si": {"coord": [width*3, height*1], "layer": 0},
+  "su": {"coord": [width*4, height*1], "layer": 0},
+  "se": {"coord": [width*5, height*1], "layer": 0},
+  "so": {"coord": [width*6, height*1], "layer": 0},
+  "ta": {"coord": [width*7, height*1], "layer": 0},
+
+  "ti": {"coord": [width*0, height*2], "layer": 0},
+  "tu": {"coord": [width*1, height*2], "layer": 0},
+  "te": {"coord": [width*2, height*2], "layer": 0},
+  "to": {"coord": [width*3, height*2], "layer": 0},
+  "na": {"coord": [width*4, height*2], "layer": 0},
+  "ni": {"coord": [width*5, height*2], "layer": 0},
+  "nu": {"coord": [width*6, height*2], "layer": 0},
+  "ne": {"coord": [width*7, height*2], "layer": 0},
+
+  "no": {"coord": [width*0, height*3], "layer": 0},
+  "ha": {"coord": [width*1, height*3], "layer": 0},
+  "hi": {"coord": [width*2, height*3], "layer": 0},
+  "fu": {"coord": [width*3, height*3], "layer": 0},
+  "he": {"coord": [width*4, height*3], "layer": 0},
+  "ho": {"coord": [width*5, height*3], "layer": 0},
+  "ma": {"coord": [width*6, height*3], "layer": 0},
+  "mi": {"coord": [width*7, height*3], "layer": 0},
 }
 
 onload = function() {
@@ -25,6 +61,11 @@ function setChangeEventListener(){
 }
 
 function drawInit(){
+  draw("efuda", "a", "00");
+  draw("efuda", "su", "00");
+  draw("efuda", "ha", "00");
+  draw("efuda", "hi", "00");
+  draw("efuda", "ne", "00");
   draw("efuda", "mi", "00");
   draw("efuda", "mu", "00");
 }
