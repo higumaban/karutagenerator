@@ -32,11 +32,27 @@ const name2pos = {
   "no": {"coord": [width*0, height*3], "layer": 0},
   "ha": {"coord": [width*1, height*3], "layer": 0},
   "hi": {"coord": [width*2, height*3], "layer": 0},
-  "fu": {"coord": [width*3, height*3], "layer": 0},
+  "hu": {"coord": [width*3, height*3], "layer": 0},
   "he": {"coord": [width*4, height*3], "layer": 0},
   "ho": {"coord": [width*5, height*3], "layer": 0},
   "ma": {"coord": [width*6, height*3], "layer": 0},
   "mi": {"coord": [width*7, height*3], "layer": 0},
+
+  "mu": {"coord": [width*0, height*0], "layer": 1},
+  "me": {"coord": [width*1, height*0], "layer": 1},
+  "mo": {"coord": [width*2, height*0], "layer": 1},
+  "ya": {"coord": [width*3, height*0], "layer": 1},
+  "yu": {"coord": [width*4, height*0], "layer": 1},
+  "yo": {"coord": [width*5, height*0], "layer": 1},
+  "ra": {"coord": [width*6, height*0], "layer": 1},
+  "ri": {"coord": [width*7, height*0], "layer": 1},
+
+  "ru": {"coord": [width*0, height*1], "layer": 1},
+  "re": {"coord": [width*1, height*1], "layer": 1},
+  "ro": {"coord": [width*2, height*1], "layer": 1},
+  "wa": {"coord": [width*3, height*1], "layer": 1},
+  "wo": {"coord": [width*4, height*1], "layer": 1},
+  "nn": {"coord": [width*5, height*1], "layer": 1},
 }
 
 onload = function() {
@@ -62,14 +78,60 @@ function setChangeEventListener(){
 
 function drawInit(){
   draw("efuda", "a", "00");
+  draw("efuda", "i", "00");
+  draw("efuda", "u", "00");
+  draw("efuda", "e", "00");
+  draw("efuda", "o", "00");
+
+  draw("efuda", "ka", "00");
   draw("efuda", "ki", "00");
   draw("efuda", "ku", "00");
+  draw("efuda", "ke", "00");
+  draw("efuda", "ko", "00");
+
+  draw("efuda", "sa", "00");
+  draw("efuda", "si", "00");
   draw("efuda", "su", "00");
+  draw("efuda", "se", "00");
+  draw("efuda", "so", "00");
+
+  draw("efuda", "ta", "00");
+  draw("efuda", "ti", "00");
+  draw("efuda", "tu", "00");
+  draw("efuda", "te", "00");
+  draw("efuda", "to", "00");
+
+  draw("efuda", "na", "00");
+  draw("efuda", "ni", "00");
+  draw("efuda", "nu", "00");
+  draw("efuda", "ne", "00");
+  draw("efuda", "no", "00");
+
   draw("efuda", "ha", "00");
   draw("efuda", "hi", "00");
-  draw("efuda", "ne", "00");
+  draw("efuda", "hu", "00");
+  draw("efuda", "he", "00");
+  draw("efuda", "ho", "00");
+
+  draw("efuda", "ma", "00");
   draw("efuda", "mi", "00");
   draw("efuda", "mu", "00");
+  draw("efuda", "me", "00");
+  draw("efuda", "mo", "00");
+
+  draw("efuda", "ya", "00");
+  draw("efuda", "yu", "00");
+  draw("efuda", "yo", "00");
+
+  draw("efuda", "ra", "00");
+  draw("efuda", "ri", "00");
+  draw("efuda", "ru", "00");
+  draw("efuda", "re", "00");
+  draw("efuda", "ro", "00");
+
+  draw("efuda", "wa", "00");
+  draw("efuda", "wo", "00");
+  draw("efuda", "nn", "00");
 }
 
 function draw(canvas_name, frame_name, bg_name) {
@@ -87,6 +149,11 @@ function draw(canvas_name, frame_name, bg_name) {
       bg_src,
       frame_src
     ];
+
+    if(bg_name=="00"){
+      srcs.unshift(srcWrap("sample"));
+    }
+
     var images = [];
     for (var i in srcs) {
         images[i] = new Image();
