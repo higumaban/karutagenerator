@@ -17,6 +17,7 @@ $(document).ready(function(){
     arrows: true,
     // draggable: false,
     // swipe: false,
+    nextArrow: '<img src="../img/resized/arrow.png" class="slide-arrow prev-arrow">',
     slidesToShow: 3,
     slidesToScroll: 3
   });
