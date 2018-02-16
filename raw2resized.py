@@ -5,7 +5,8 @@ raw_dir = "./docs/img/raw"
 resized_dir = "./docs/img/resized"
 sample_dir = "./docs/img/sample"
 
-bg_name = "washi"
+bg_name = "no"
+resize_width = 250
 
 frame_dir = "/".join([raw_dir, "frame"])
 sentence_dir = "/".join([raw_dir, "sentence"])
@@ -49,7 +50,7 @@ if __name__ == "__main__":
             "/".join([sentence_dir, sentence_path_dic[name]]),
             "/".join([frame_dir, frame_path]),
         ])
-        sentence_pic_resized = sentence_pic.resize((150, int(150/sentence_pic.width * sentence_pic.height)), Image.BICUBIC)
+        sentence_pic_resized = sentence_pic.resize((resize_width, int(resize_width/sentence_pic.width * sentence_pic.height)), Image.BICUBIC)
         sentence_pic_resized.save(
             "/".join([resized_dir, sentence_path_dic[name].replace(".png", ".jpg")]),
             'JPEG', quality=90, optimize=True
@@ -61,7 +62,7 @@ if __name__ == "__main__":
                 "/".join([illust_dir, illust_path]),
                 "/".join([frame_dir, frame_path]),
             ])
-            illust_pic_resized = illust_pic.resize((150, int(150/illust_pic.width * illust_pic.height)), Image.BICUBIC)
+            illust_pic_resized = illust_pic.resize((resize_width, int(resize_width/illust_pic.width * illust_pic.height)), Image.BICUBIC)
             illust_pic.save(
                 "/".join([sample_dir, illust_path.replace(".png", ".jpg")]),
                 'JPEG', quality=100, optimize=True
