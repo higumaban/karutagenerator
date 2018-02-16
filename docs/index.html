@@ -1,25 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html>
   <head>
-    <title>かるたの生成テスト</title>
-    <link rel="stylesheet" type="text/css" href="css/canvas.css">
+    <title>絵札選択、閲覧画面テスト</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="css/karutaselector.css"/>
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
   </head>
   <body>
-    <!-- <script type="text/javascript"></script> -->
-    <script type="text/javascript" src="js/canvas.js"></script>
-    <h1>かるたの生成テスト</h1>
-    <form method="post">
-      <p>
-        み
-        <input class="img_selector" type="radio" name="mi" value="00" checked="checked">A
-        <input class="img_selector" type="radio" name="mi" value="01">B
-      </p>
-    </form>
-    <canvas id="efuda_canvas_0" class="pasteboard" width="5784" height="4092"></canvas>
-    <br>
-    <canvas id="efuda_canvas_1" class="pasteboard" width="5784" height="4092"></canvas>
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/karutaselector.js"></script>
+    <h1>絵札選択、閲覧画面テスト</h1>
+    <p>あ行</p>
+      <div class="card_column">
+        <img class="card" value="a" src="./img/resized/a_sentence.jpg">
+        <img class="card" value="i" src="./img/resized/i_sentence.jpg">
+        <img class="card" value="u" src="./img/resized/u_sentence.jpg">
+        <img class="card" value="e" src="./img/resized/e_sentence.jpg">
+        <img class="card" value="o" src="./img/resized/o_sentence.jpg">
+      </div>
+    <p>か行</p>
+      <div class="card_column">
+        <img class="card" value="ka" src="./img/resized/ka_sentence.jpg">
+        <img class="card" value="ki" src="./img/resized/ki_sentence.jpg">
+        <img class="card" value="ku" src="./img/resized/ku_sentence.jpg">
+        <img class="card" value="ke" src="./img/resized/ke_sentence.jpg">
+        <img class="card" value="ko" src="./img/resized/ko_sentence.jpg">
+      </div>
+    <p>さ行</p>
+      <div class="card_column">
+        <img class="card" value="sa" src="./img/resized/sa_sentence.jpg">
+        <img class="card" value="si" src="./img/resized/si_sentence.jpg">
+        <img class="card" value="su" src="./img/resized/su_sentence.jpg">
+        <img class="card" value="se" src="./img/resized/se_sentence.jpg">
+        <img class="card" value="so" src="./img/resized/so_sentence.jpg">
+      </div>
+    <p>た行</p>
+      <div class="card_column">
+        <img class="card" value="ta" src="./img/resized/ta_sentence.jpg">
+        <img class="card" value="ti" src="./img/resized/ti_sentence.jpg">
+        <img class="card" value="tu" src="./img/resized/tu_sentence.jpg">
+        <img class="card" value="te" src="./img/resized/te_sentence.jpg">
+        <img class="card" value="to" src="./img/resized/to_sentence.jpg">
+      </div>
+    <p>な行</p>
+      <div class="card_column">
+        <img class="card" value="na" src="./img/resized/na_sentence.jpg">
+        <img class="card" value="ni" src="./img/resized/ni_sentence.jpg">
+        <img class="card" value="nu" src="./img/resized/nu_sentence.jpg">
+        <img class="card" value="ne" src="./img/resized/ne_sentence.jpg">
+        <img class="card" value="no" src="./img/resized/no_sentence.jpg">
+      </div>
+    <p>は行</p>
+      <div class="card_column">
+        <img class="card" value="ha" src="./img/resized/ha_sentence.jpg">
+        <img class="card" value="hi" src="./img/resized/hi_sentence.jpg">
+        <img class="card" value="hu" src="./img/resized/hu_sentence.jpg">
+        <img class="card" value="he" src="./img/resized/he_sentence.jpg">
+        <img class="card" value="ho" src="./img/resized/ho_sentence.jpg">
+      </div>
+    <p>ま行</p>
+      <div class="card_column">
+        <img class="card" value="ma" src="./img/resized/ma_sentence.jpg">
+        <img class="card" value="mi" src="./img/resized/mi_sentence.jpg">
+        <img class="card" value="mu" src="./img/resized/mu_sentence.jpg">
+        <img class="card" value="me" src="./img/resized/me_sentence.jpg">
+        <img class="card" value="mo" src="./img/resized/mo_sentence.jpg">
+      </div>
+    <p>や行</p>
+      <div class="card_column">
+        <img class="card" value="ya" src="./img/resized/ya_sentence.jpg">
+        <img class="card" value="none" src="./img/resized/none.png">
+        <img class="card" value="yu" src="./img/resized/yu_sentence.jpg">
+        <img class="card" value="none" src="./img/resized/none.png">
+        <img class="card" value="yo" src="./img/resized/yo_sentence.jpg">
+      </div>
+    <p>ら行</p>
+      <div class="card_column">
+        <img class="card" value="ra" src="./img/resized/ra_sentence.jpg">
+        <img class="card" value="ri" src="./img/resized/ri_sentence.jpg">
+        <img class="card" value="ru" src="./img/resized/ru_sentence.jpg">
+        <img class="card" value="re" src="./img/resized/re_sentence.jpg">
+        <img class="card" value="ro" src="./img/resized/ro_sentence.jpg">
+      </div>
+    <p>わ行</p>
+      <div class="card_column">
+        <img class="card" value="wa" src="./img/resized/wa_sentence.jpg">
+        <img class="card" value="none" src="./img/resized/none.png">
+        <img class="card" value="wo" src="./img/resized/wo_sentence.jpg">
+        <img class="card" value="none" src="./img/resized/none.png">
+        <img class="card" value="nn" src="./img/resized/nn_sentence.jpg">
+      </div>
+    <a href="./html/genkaruta.html">かるた生成（PCのみ）</a>
   </body>
 </html>
