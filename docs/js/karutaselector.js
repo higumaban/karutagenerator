@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.card_column').slick({
-    dots: true,
+    // dots: true,
     arrows: true,
     // draggable: false,
     // swipe: false,
