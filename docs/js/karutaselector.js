@@ -11,8 +11,6 @@ $(document).ready(function(){
     t = now;
   }, false);
 
-  var temp_accordion = "";
-
   $('.card_column').slick({
     // dots: true,
     arrows: true,
@@ -23,6 +21,10 @@ $(document).ready(function(){
     slidesToShow: 3,
     slidesToScroll: 3
   });
+
+
+  var temp_accordion = "";
+  var can_accordion_move = true;
 
   $('.yomifuda').on('click',function(){
     var add_illust_selector = function(that){
@@ -37,22 +39,22 @@ $(document).ready(function(){
       }));
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
-        "value": "ri",
+        "value": $(that).attr("value"),
         "src": "./img/resized/mi_00.jpg"
       }));
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
-        "value": "ru",
+        "value": $(that).attr("value"),
         "src": "./img/resized/mi_01.jpg"
       }));
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
-        "value": "re",
+        "value": $(that).attr("value"),
         "src": "./img/resized/mi_02.jpg"
       }));
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
-        "value": "ro",
+        "value": $(that).attr("value"),
         "src": "./img/resized/mi_03.jpg"
       }));
       illust_selector.slick({
@@ -67,23 +69,44 @@ $(document).ready(function(){
       $(that).parent().parent().parent().after(illust_selector);
     }
 
+    if(!can_accordion_move){
+      return
+    }
+
+    can_accordion_move = false;
     if(temp_accordion == ""){
       add_illust_selector(this);
       temp_accordion = $(this).attr("value");
-      $(".illust_selector").slideToggle(200);
+      $(".illust_selector").slideToggle(200, function(){
+        can_accordion_move = true;
+      });
     }else{
       $(".illust_selector").slideToggle(200, function(){
         $(".illust_selector").remove();
         if($(this).attr("value") != temp_accordion){
           add_illust_selector(this);
           temp_accordion = $(this).attr("value");
-          $(".illust_selector").slideToggle(200);
+          $(".illust_selector").slideToggle(200, function(){
+            can_accordion_move = true;
+          });
         }else{
           temp_accordion = "";
+          can_accordion_move = true;
         }
       }.bind(this));
+    }
+  });
 
+  $('.efuda').live('click', function(){
+    if(!can_accordion_move){
+      return
     }
 
+    $("."+$(this).attr("value")+".yomifuda").attr("src", $(this).attr("src"));
+    $(".illust_selector").slideToggle(200, function(){
+      temp_accordion = "";
+      can_accordion_move = true;
+    });
+    // $(".yomifuda").attr("src", $(this).attr("src"));
   });
 });
