@@ -5,7 +5,7 @@ $(document).ready(function(){
   var t = 0;
   document.documentElement.addEventListener('touchend', function (e) {
     var now = new Date().getTime();
-    if ((now - t) < 350){
+    if ((now - t) < 500){
       e.preventDefault();
     }
     t = now;
@@ -27,7 +27,8 @@ $(document).ready(function(){
   $('.yomifuda').on('click',function(){
     var add_illust_selector = function(that){
       var illust_selector =  $("<div></div>", {
-        "class": "card_column illust_selector"
+        "class": "card_column illust_selector",
+        "style": "display: none;"
       });
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
@@ -69,14 +70,19 @@ $(document).ready(function(){
     if(temp_accordion == ""){
       add_illust_selector(this);
       temp_accordion = $(this).attr("value");
+      $(".illust_selector").slideToggle(200);
     }else{
-      $(".illust_selector").remove();
-      if($(this).attr("value") != temp_accordion){
-        add_illust_selector(this);
-        temp_accordion = $(this).attr("value");
-      }else{
-        temp_accordion = "";
-      }
+      $(".illust_selector").slideToggle(200, function(){
+        $(".illust_selector").remove();
+        if($(this).attr("value") != temp_accordion){
+          add_illust_selector(this);
+          temp_accordion = $(this).attr("value");
+          $(".illust_selector").slideToggle(200);
+        }else{
+          temp_accordion = "";
+        }
+      }.bind(this));
+
     }
 
   });
