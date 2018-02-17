@@ -1,5 +1,14 @@
 const initial_list = [
-  
+  "a", "i", "u", "e", "o",
+  "ka", "ki", "ku", "ke", "ko", 
+  "sa", "si", "su", "se", "so", 
+  "ta", "ti", "tu", "te", "to", 
+  "na", "ni", "nu", "ne", "no", 
+  "ha", "hi", "hu", "he", "ho", 
+  "ma", "mi", "mu", "me", "mo", 
+  "ya", "yu", "yo", 
+  "ra", "ri", "ru", "re", "ro", 
+  "wa", "wo", "nn" 
 ] 
 
 $(document).ready(function(){
@@ -26,6 +35,16 @@ $(document).ready(function(){
     slidesToScroll: 3
   });
 
+  var illust_dict = null;
+
+  $.ajax({
+    type: "get",
+    url: './img/config/illusts_dict.json',
+    success: function(res) {
+      illusts_dict = res;
+    }
+  });
+
 
   var temp_accordion = "";
   var can_accordion_move = true;
@@ -41,26 +60,21 @@ $(document).ready(function(){
         "value": $(that).attr("value"),
         "src": "./img/resized/" + $(that).attr("value") + "_sentence.jpg"
       }));
-      illust_selector.append($("<img></img>", {
-        "class": "card efuda",
-        "value": $(that).attr("value"),
-        "src": "./img/resized/mi_00.jpg"
-      }));
-      illust_selector.append($("<img></img>", {
-        "class": "card efuda",
-        "value": $(that).attr("value"),
-        "src": "./img/resized/mi_01.jpg"
-      }));
-      illust_selector.append($("<img></img>", {
-        "class": "card efuda",
-        "value": $(that).attr("value"),
-        "src": "./img/resized/mi_02.jpg"
-      }));
-      illust_selector.append($("<img></img>", {
-        "class": "card efuda",
-        "value": $(that).attr("value"),
-        "src": "./img/resized/mi_03.jpg"
-      }));
+
+      var name = $(that).attr("value");
+      var num_list = [];
+      if(name in illusts_dict){
+        num_list = illusts_dict[name];
+      }
+
+      for(var i in num_list){
+        illust_selector.append($("<img></img>", {
+          "class": "card efuda",
+          "value": name,
+          "src": "./img/resized/" + name + "_" + num_list[i] + ".jpg"
+        }));
+      }
+
       illust_selector.slick({
         arrows: true,
         speed: 200,

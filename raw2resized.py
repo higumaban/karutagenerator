@@ -1,9 +1,11 @@
 import os
+import json
 from PIL import Image
 
 raw_dir = "./docs/img/raw"
 resized_dir = "./docs/img/resized"
 sample_dir = "./docs/img/sample"
+illust_dict_path = "./docs/img/config/illusts_dict.json"
 
 bg_name = "no"
 resize_width = 250
@@ -31,12 +33,19 @@ def overlay_picts(pict_pathes):
 
 if __name__ == "__main__":
     illust_pathes_dic = {}
+    illust_num_dic = {}
     for illust_path in illust_pathes:
-        name = illust_path.split("_")[0]
+        name, other = illust_path.split("_")
+        num = other.split(".")[0]
         if name in illust_pathes_dic:
             illust_pathes_dic[name].append(illust_path)
+            illust_num_dic[name].append(num)
         else:
             illust_pathes_dic[name] = [illust_path, ]
+            illust_num_dic[name] = [num, ]
+
+    with open(illust_dict_path, "w") as f:
+        json.dump(illust_num_dic, f)
 
     sentence_path_dic = {sp.split("_")[0]: sp for sp in sentence_pathes}
     bg_path_dic = {bg.split(".")[0]: bg for bg in bg_pathes}
