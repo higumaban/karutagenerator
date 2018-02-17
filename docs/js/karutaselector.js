@@ -1,3 +1,7 @@
+const initial_list = [
+  
+] 
+
 $(document).ready(function(){
   document.documentElement.addEventListener('touchstart', function (e) {
     if (e.touches.length >= 2) {e.preventDefault();}
@@ -5,7 +9,7 @@ $(document).ready(function(){
   var t = 0;
   document.documentElement.addEventListener('touchend', function (e) {
     var now = new Date().getTime();
-    if ((now - t) < 500){
+    if ((now - t) < 400){
       e.preventDefault();
     }
     t = now;
@@ -98,10 +102,6 @@ $(document).ready(function(){
   });
 
   $('.efuda').live('click', function(){
-    if(!can_accordion_move){
-      return
-    }
-
     $("."+$(this).attr("value")+".yomifuda").attr("src", $(this).attr("src"));
     $(".illust_selector").slideToggle(200, function(){
       $(".illust_selector").remove();
