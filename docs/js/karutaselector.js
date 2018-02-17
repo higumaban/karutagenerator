@@ -104,6 +104,7 @@ $(document).ready(function(){
 
     $("."+$(this).attr("value")+".yomifuda").attr("src", $(this).attr("src"));
     $(".illust_selector").slideToggle(200, function(){
+      $(".illust_selector").remove();
       temp_accordion = "";
       can_accordion_move = true;
     });
