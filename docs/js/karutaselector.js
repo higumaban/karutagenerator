@@ -18,16 +18,18 @@ $(document).ready(function(){
     speed: 200,
     draggable: false,
     swipe: false,
-    nextArrow: '<img src="./img/resized/arrow.png" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="/img/resized/arrow.png" class="slide-arrow prev-arrow">',
     slidesToShow: 3,
     slidesToScroll: 3
   });
+  $("#main").fadeIn(300);
+  
 
   var illust_dict = null;
 
   $.ajax({
     type: "get",
-    url: './img/config/illusts_dict.json',
+    url: '/img/config/illusts_dict.json',
     success: function(res) {
       illusts_dict = res;
     }
@@ -46,7 +48,7 @@ $(document).ready(function(){
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
         "value": $(that).attr("value"),
-        "src": "./img/resized/" + $(that).attr("value") + "_sentence.jpg"
+        "src": "/img/resized/" + $(that).attr("value") + "_sentence.jpg"
       }));
 
       var name = $(that).attr("value");
@@ -59,7 +61,7 @@ $(document).ready(function(){
         illust_selector.append($("<img></img>", {
           "class": "card efuda",
           "value": name,
-          "src": "./img/resized/" + name + "_" + num_list[i] + ".jpg"
+          "src": "/img/resized/" + name + "_" + num_list[i] + ".jpg"
         }));
       }
 
@@ -68,7 +70,7 @@ $(document).ready(function(){
         speed: 200,
         draggable: false,
         swipe: false,
-        nextArrow: '<img src="./img/resized/arrow_w.png" class="slide-arrow prev-arrow">',
+        nextArrow: '<img src="/img/resized/arrow_w.png" class="slide-arrow prev-arrow">',
         slidesToShow: 3,
         slidesToScroll: 3
       });

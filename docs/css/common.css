@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "yasashisa";
+    font-style: normal;
+    font-weight: 400;
+    src: url('/font/yasashisa.ttf');
+}
+
+
+body{
+    font-family: "yasashisa";
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    font-family: "ＭＳ ゴシック";
+}
+
+a:link{
+  text-decoration: none!important;
+}
+
+#header{
+    position: relative;
+    height: 48px;
+    width: 100%;
+    background-color: #111111
+}
+
+#header_logo{
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+#header_menu_button{
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+#header_menu{
+    z-index: 1;
+    top: 100%;
+    position: absolute;
+    right: 0;
+}
+
+#header_menu div{
+    background-color: black;
+    color: #eeeeee;
+    text-decoration: none ;
+    padding-bottom:1px;
+    line-height: 35px;
+    padding: 3px;
+    height: 35px;
+    width: 130px;
+    text-align: center;
+    border-top: solid 1px #ffffff66;
+}
+
+#main{
+    margin: 8px;
+}
