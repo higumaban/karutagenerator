@@ -18,7 +18,7 @@ $(document).ready(function(){
     speed: 200,
     draggable: false,
     swipe: false,
-    nextArrow: '<img src="/img/resized/arrow.png" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="/karutagenerator/img/resized/arrow.png" class="slide-arrow prev-arrow">',
     slidesToShow: 3,
     slidesToScroll: 3
   });
@@ -70,7 +70,7 @@ $(document).ready(function(){
         speed: 200,
         draggable: false,
         swipe: false,
-        nextArrow: '<img src="/img/resized/arrow_w.png" class="slide-arrow prev-arrow">',
+        nextArrow: '<img src="/karutagenerator/img/resized/arrow_w.png" class="slide-arrow prev-arrow">',
         slidesToShow: 3,
         slidesToScroll: 3
       });
