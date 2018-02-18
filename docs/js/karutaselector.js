@@ -29,7 +29,7 @@ $(document).ready(function(){
 
   $.ajax({
     type: "get",
-    url: '/img/config/illusts_dict.json',
+    url: '/karutagenerator/img/config/illusts_dict.json',
     success: function(res) {
       illusts_dict = res;
     }
