@@ -48,7 +48,7 @@ $(document).ready(function(){
       illust_selector.append($("<img></img>", {
         "class": "card efuda",
         "value": $(that).attr("value"),
-        "src": "/img/resized/" + $(that).attr("value") + "_sentence.jpg"
+        "src": "/karutagenerator/img/resized/" + $(that).attr("value") + "_sentence.jpg"
       }));
 
       var name = $(that).attr("value");
@@ -61,7 +61,7 @@ $(document).ready(function(){
         illust_selector.append($("<img></img>", {
           "class": "card efuda",
           "value": name,
-          "src": "/img/resized/" + name + "_" + num_list[i] + ".jpg"
+          "src": "/karutagenerator/img/resized/" + name + "_" + num_list[i] + ".jpg"
         }));
       }
 
